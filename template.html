@@ -1,0 +1,52 @@
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  
+  
+<div id="nameGenerator">
+  <div class="header">
+    <h1 class="h1">Name My Cat</h1>
+  </div>
+
+  <main class="name-container" ng-controller="NameCtrl">
+    <div class="img-container p-top p-bottom">
+      <img ng-src="\{{catPhoto}}"/>
+    </div>
+
+    <div class="name-container p-top p-bottom">
+      <span class="name">\{{firstName}} \{{lastName}}</span>
+    </div>
+
+    <button type="button" class="btn btn-outline-primary" ng-click="getName(names)">Gimme Another</button>
+  </main>
+
+</div>
+
+<script>
+  
+  var staticPath = "{{staticPath}}";
+  
+  window.oc = window.oc || {};
+  oc.cmd = oc.cmd || [];
+
+  oc.cmd.push(function(oc){
+
+    // Ensure window.angular is available. If not, it is appended to the head first.
+    // If multiple oc angular components are in the page, angular will be loaded only once
+    // and only if it is not there already ;)
+
+    oc.require('angular', 'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.0.2/angular.js', function (angular){
+      
+      // Now we load our Angular controllers
+      oc.require(['{{staticPath}}js/greeting.js', '{{staticPath}}css/reset.css', '{{staticPath}}css/styles.css'], function () {
+        // Now bootstrap Angular component's root to be recognised as app root
+        // This is needed to asyncronously load Angular apps - classic approach would be to add an ng-app
+        // on the element's root but this would make angular to error
+
+        angular.bootstrap(document, ["nameGenerator"]);
+
+      });
+    });
+  });
+  
+  </script>

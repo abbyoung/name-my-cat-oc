@@ -1,0 +1,66 @@
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 100%;
+}
+#nameGenerator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header {
+  margin-bottom: 4rem;
+  margin-top: 2rem;
+}
+
+footer {
+  margin-top: 2rem;
+}
+
+h1.h1 {
+  font-size: 4rem;
+  text-align: center;
+}
+
+main.name-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img {
+  width: 130px;
+  height: auto;
+  
+}
+
+.name {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+button.btn {
+  margin-top: 2rem;
+  font-size: 1.4rem;
+}
+
+.img-container {
+  height: 150px;
+  text-align: center;
+}
+.name-container {
+  text-align: center;
+}
+
+.p-top {
+  padding-top: 2rem;
+}
+
+.p-bottom {
+  padding-bottom: 2rem;
+}
+
+.credits {
+  text-align: center;
+  font-size: 12px;
+}
